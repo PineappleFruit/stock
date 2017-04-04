@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处理数组</title>
+    <script src="../public/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <input type="text" id="input_shuru">
+    <button id="button_3">提交</button>
+</body>
+    <script>
+        $(document).ready(function(){
+            $("#button_3").click(function(){
+                var $input_shuru = $("#input_shuru").val();
+                var newarry = new Array;
+                var all = new Array;
+                var old = $input_shuru.split(",");
+//            all =all + old;
+                if(newarry.length === 0){
+                    newarry = old;
+                }
+                newarry.push.apply(newarry , old);
+                console.log($input_shuru);
+                console.log(old);
+                console.log(old.length);
+                console.log(newarry);
+                console.log(newarry.length);
+
+                var object = new Object();
+                console.log(object);
+                var b=new  Array;
+                for(var i = 0; i<old.length; i++){
+                    if (!object[old[i]]){
+                        ;
+                        b.push(old[i]);
+                        object[old[i]] = 1;
+                    }
+                }
+                console.log(b);
+//            console.log(all);
+            });
+
+
+        })
+    </script>
+</html>

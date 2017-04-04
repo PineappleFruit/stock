@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选</title>
+    <script src="../public/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <div>
+        <input name="checked" type="checkbox">苹果
+        <input name="checked" type="checkbox">香蕉
+        <input name="checked" type="checkbox">葡萄
+        <input name="checked" type="checkbox">橘子
+        <input name="checked" type="checkbox">芒果
+        <input name="checked" type="checkbox">柠檬
+    </div>
+    <span>全选</span>
+    <input type="checkbox" id="allchoose">
+
+</body>
+<script>
+//    $("#allchoose").click(function(){
+////        console.log('d');
+//        if(this.checked){
+//            $('[name =checked]:checkbox').prop("checked",true);
+//        }else {
+//            $("[name =checked]:checkbox").prop("checked",false);
+//        }
+//    });
+$("#allchoose").click(function(){
+    $("[name = checked]:checkbox").prop("checked",this.checked);
+});
+$('[name=checked]:checkbox').click(function(){
+    var flag=true;
+    $('[name=checked]:checkbox').each(function(){
+        console.log($('[name=checked]:checkbox'));
+        if(!this.checked){
+            flag = false;
+        }
+    });
+    console.log(flag);
+    $("#allchoose").prop("checked",flag);
+    console.log($("#allchoose")[0].checked);
+});
+
+</script>
+</html>

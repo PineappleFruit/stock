@@ -1,0 +1,30 @@
+tr:hover{
+    background:rgba(0,0,0,0.1);
+}
+.Entry{
+    width: 800px;
+    margin: 0 auto;
+
+}
+.tableDiv{
+    clear: both;
+    /*width: 800px;*/
+    height: 300px;
+    /*margin: 0 auto;*/
+}
+.shuru{
+    width: 400px;
+    /*margin:  0 auto;*/
+    float: left;
+    margin-bottom: 25px;
+}
+.shuru input{
+    width: 200px;
+    float: left;
+    margin-top: 25px;
+}
+.shuru button{
+    float: left;
+    margin-top: 25px;
+    margin-left: 20px;
+}

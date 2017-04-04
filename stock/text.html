@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta  charset=utf-8 />
+    <title>test</title>
+    <script>
+        window.onload = function() {
+            var oBtn = document.getElementById("btn");
+            var oTab = document.getElementById("tab");
+
+            oBtn.onclick = function() {
+                var arr = [];
+                var _rows = oTab.tBodies[0].rows;
+                console.log(_rows);
+                for (var i = 0; i < _rows.length; i++) {
+                    arr[i] = _rows[i];
+                }
+
+                arr.sort(function(first, second) {
+                    var t1 = parseInt(first.cells[0].innerText);
+                    var t2 = parseInt(second.cells[0].innerText);
+                    if (t1 > t2) {
+                        return 1;
+                    } else if (t1 < t2) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                });
+                console.log(arr[4]);
+
+                for (var i = 0; i < arr.length; i++) {
+                    var line = arr[i];
+                    var tr = oTab.tBodies[0].insertRow(i);
+
+                    for (var j = 0; j < line.cells.length; j++) {
+                        var col = line.cells[j];
+                        var td = tr.insertCell(j);
+                        td.innerHTML = col.innerHTML;
+                    }
+                }
+                for (var i = 0; i < 8; i++) {
+                    oTab.tBodies[0].deleteRow(oTab.tBodies[0].rows.length - 1);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="排序" id="btn" />
+<table id="tab">
+    <thead><tr><td>#</td><td>Objects</td><td>Year</td></tr></thead>
+    <tbody>
+    <tr><td>2</td><td>The Shawshank Redemption</td><td>1994</td></tr>
+    <tr><td>3</td><td>The Godfather</td><td>1972</td></tr>
+    <tr><td>1</td><td>The Godfather: Part II</td><td>1974</td></tr>
+    <tr><td>5</td><td>The Good, the Bad and the Ugly</td><td>1966</td></tr>
+    <tr><td>7</td><td>Beijing</td><td>2008</td></tr>
+    <tr><td>4</td><td>Shanghai</td><td>2013</td></tr>
+    <tr><td>6</td><td>张三</td><td>2005</td></tr>
+    <tr><td>8</td><td>李四</td><td>2013</td></tr>
+    </tbody>
+</table>
+</body>
+</html>

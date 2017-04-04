@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>股票查询</title>
+    <script src="public/jquery-3.1.1.js"></script>
+    <script src="js/stock_js.js"></script>
+    <link href="style/stock.css" rel="stylesheet">
+    <link href="public/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/dist/js/bootstrap.min.js">
+</head>
+<body>
+    <div class="Entry">
+        <!--<form >-->
+            <div class="shuru">
+                <input type="text" id="search" value="" class="form-control" placeholder="请输入6~7位数字">
+                <button id="search_btn" type="submit" class="btn btn-info" >查询</button>
+                <!--<span class="prompt">你输入的股票不存在</span>-->
+            </div>
+        <!--</form>-->
+            <div id="divDome" >
+            </div>
+            <div class="tableDiv">
+                <table id="tableStock" class="table table-bordered table-responsive">
+                        <tr>
+                            <th>选项</th>
+                            <th>证券名</th>
+                            <th>最高价</th>
+                            <th>最低价</th>
+                            <th>价格</th>
+                            <th>删除</th>
+                        </tr>
+                </table>
+                <button id="Delete" type="button" class="btn btn-info">删除</button>
+                <button id="sortStock" class="btn btn-info">价格排序</button>
+                <span>全选</span>
+                <input type="checkbox" id="Choose">
+            </div>
+
+    </div>
+
+</body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var searchBtn=document.getElementById('search_btn');
+//          var tableStock=document.getElementById('tableStock');
+//          var sortStock=document.getElementById("sortStock");
+            searchBtn.onclick=function () {
+            var search=document.getElementById('search').value;
+                stock(search);
+            };
+        })
+    </script>
+</html>
